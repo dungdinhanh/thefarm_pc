@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Finance.MainFinanceController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../MainScreen/style.css">
+         <children>
+            <AnchorPane prefHeight="57.0" prefWidth="1000.0" styleClass="custom-toolbar">
+               <effect>
+                  <DropShadow height="6.18" radius="1.7875" width="2.97" />
+               </effect>
+               <children>
+                  <Text fill="WHITE" layoutX="61.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finance Management" wrappingWidth="212.13671875">
+                     <font>
+                        <Font name="Roboto Medium" size="20.0" />
+                     </font>
+                  </Text>
+                  <HBox fx:id="hoxImages" alignment="CENTER" layoutX="877.0" layoutY="18.0" spacing="20.0">
+                     <children>
+                        <ImageView fx:id="imgInfo" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#showInfo" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Circle%20Info%20-%2001.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="imgHome" fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#goHome" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <MaterialDesignIconView fx:id="iconClose" fill="WHITE" glyphName="CLOSE" onMouseClicked="#closeStage" size="26.0" />
+                     </children>
+                  </HBox>
+                  <Text fx:id="currentBalanceText" fill="WHITE" layoutX="553.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Balance:" wrappingWidth="212.13671875">
+                     <font>
+                        <Font name="Roboto Medium" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="transactionHistory" layoutX="69.0" layoutY="132.0" onMouseClicked="#setUpTransactionHistory" prefHeight="153.0" prefWidth="231.0" style="-fx-background-color: #00C0EF;" styleClass="card">
+               <children>
+                  <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #009ABF;" styleClass="card">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="AREA_CHART" layoutX="9.0" layoutY="31.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                     </children>
+                  </Pane>
+                  <Text layoutX="20.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction History" textAlignment="CENTER" wrappingWidth="191.00000619888306">
+                     <font>
+                        <Font name="Cambria" size="29.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="currentBalance" layoutX="690.0" layoutY="126.0" onMouseClicked="#setUpCurrentBalance" prefHeight="166.0" prefWidth="231.0" style="-fx-background-color: #00A65A;" styleClass="card">
+               <children>
+                  <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #008D4D;" styleClass="card">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="NEWSPAPER_ALT" layoutX="9.0" layoutY="31.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                     </children>
+                  </Pane>
+                  <Text layoutX="20.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Balance" textAlignment="CENTER" wrappingWidth="191.00000619888306">
+                     <font>
+                        <Font name="Cambria" size="29.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="addMoney" layoutX="76.0" layoutY="363.0" prefHeight="166.0" prefWidth="231.0" style="-fx-background-color: #F39C12;" styleClass="card">
+               <children>
+                  <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #CF850F;" styleClass="card">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BAR_CHART_ALT" layoutX="9.0" layoutY="30.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                     </children>
+                  </Pane>
+                  <Text layoutX="20.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Money" textAlignment="CENTER" wrappingWidth="191.00000619888306">
+                     <font>
+                        <Font name="Cambria" size="29.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="amountAdding" layoutX="41.0" layoutY="64.0" promptText="Amount of money" />
+                  <Button layoutX="89.0" layoutY="117.0" mnemonicParsing="false" onAction="#setUpAddMoney" text="Submit" />
+               </children>
+            </Pane>
+            <Pane fx:id="withDraw" layoutX="687.0" layoutY="359.0" prefHeight="174.0" prefWidth="237.0" style="-fx-background-color: #DD4B39;" styleClass="card">
+               <children>
+                  <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #BC4031;" styleClass="card">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BARCODE" layoutX="8.0" layoutY="30.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                     </children>
+                  </Pane>
+                  <Text layoutX="23.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Withdraw" textAlignment="CENTER" wrappingWidth="191.00000619888306">
+                     <font>
+                        <Font name="Cambria" size="29.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="amountSub" layoutX="44.0" layoutY="75.0" promptText="Amount of money" />
+                  <Button layoutX="93.0" layoutY="120.0" mnemonicParsing="false" onAction="#setUpWithDraw" text="Submit" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

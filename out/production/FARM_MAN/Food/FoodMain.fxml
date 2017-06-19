@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Food.FoodMainController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../MainScreen/style.css">
+         <children>
+            <AnchorPane prefHeight="57.0" prefWidth="1000.0" styleClass="custom-toolbar">
+               <effect>
+                  <DropShadow height="6.18" radius="1.7875" width="2.97" />
+               </effect>
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Food Control" wrappingWidth="181.13671875">
+                     <font>
+                        <Font name="Roboto Medium" size="20.0" />
+                     </font>
+                  </Text>
+                  <HBox fx:id="hoxImages" alignment="CENTER" layoutX="920.0" layoutY="16.0" spacing="20.0">
+                     <children>
+                        <ImageView fx:id="imgHome" fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#goHome" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <MaterialDesignIconView fx:id="iconClose" fill="WHITE" glyphName="CLOSE" onMouseClicked="#closeStage" size="26.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="stock" layoutX="27.0" layoutY="65.0" prefHeight="235.0" prefWidth="228.0" styleClass="card">
+               <children>
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" wrappingWidth="134.00000619888306" />
+                  <VBox fx:id="grassPane" layoutX="13.0" layoutY="43.0" prefHeight="177.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <VBox onMouseEntered="#grassStat">
+                           <children>
+                              <Text fx:id="grassText" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Grass" wrappingWidth="43.693359375">
+                                 <font>
+                                    <Font name="Roboto Light" size="12.0" />
+                                 </font>
+                              </Text>
+                              <ProgressBar fx:id="grassBar" prefWidth="200.0" progress="0.12" styleClass="success" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="meatPane" onMouseEntered="#meatStat">
+                           <children>
+                              <Text fx:id="meatText" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Meat" wrappingWidth="41.392578125">
+                                 <font>
+                                    <Font name="Roboto Light" size="12.0" />
+                                 </font>
+                              </Text>
+                              <ProgressBar fx:id="meetBar" prefWidth="200.0" progress="0.09" styleClass="danger" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="generalPane" onMouseEntered="#generalStat">
+                           <children>
+                              <Text fx:id="generalText" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="General" wrappingWidth="50.7578125">
+                                 <font>
+                                    <Font name="Roboto Light" size="12.0" />
+                                 </font>
+                              </Text>
+                              <ProgressBar fx:id="generalBar" onMouseEntered="#generalStat" prefWidth="200.0" progress="0.06" styleClass="info" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="ricePane" onMouseEntered="#riceStat">
+                           <children>
+                              <Text fx:id="riceText" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Rice" wrappingWidth="34.90234375">
+                                 <font>
+                                    <Font name="Roboto Light" size="12.0" />
+                                 </font>
+                              </Text>
+                              <ProgressBar fx:id="riceBar" prefWidth="200.0" progress="0.15" styleClass="warning" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <HBox fx:id="activityPane" layoutX="19.0" layoutY="499.0" prefHeight="80.0" prefWidth="973.0" spacing="20.0">
+               <children>
+                  <Pane fx:id="setFoodPane" onMouseClicked="#setFood" prefHeight="80.0" prefWidth="231.0" style="-fx-background-color: #00C0EF;" styleClass="card">
+                     <children>
+                        <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #009ABF;" styleClass="card">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="AREA_CHART" layoutX="9.0" layoutY="31.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                           </children>
+                        </Pane>
+                        <Text fill="WHITE" layoutX="23.0" layoutY="47.0" onMouseClicked="#showInfo" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Food" wrappingWidth="181.13671875">
+                           <font>
+                              <Font name="Roboto Medium" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="foodOutcomePane" layoutX="10.0" layoutY="10.0" onMouseClicked="#foodOutcome" prefHeight="80.0" prefWidth="231.0" style="-fx-background-color: #00A65A;" styleClass="card">
+                     <children>
+                        <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #008D4D;" styleClass="card">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="NEWSPAPER_ALT" layoutX="9.0" layoutY="31.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                           </children>
+                        </Pane>
+                        <Text fill="WHITE" layoutX="41.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Food outcome" wrappingWidth="181.13671875">
+                           <font>
+                              <Font name="Roboto Medium" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="stockPane" layoutX="241.0" layoutY="10.0" onMouseClicked="#stockStatus" prefHeight="80.0" prefWidth="231.0" style="-fx-background-color: #F39C12;" styleClass="card">
+                     <children>
+                        <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #CF850F;" styleClass="card">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="BAR_CHART_ALT" layoutX="9.0" layoutY="30.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                           </children>
+                        </Pane>
+                        <Text fill="WHITE" layoutX="41.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Status" wrappingWidth="181.13671875">
+                           <font>
+                              <Font name="Roboto Medium" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="buyFoodPane" layoutX="472.0" layoutY="10.0" onMouseClicked="#buyFood" prefHeight="80.0" prefWidth="231.0" style="-fx-background-color: #DD4B39;" styleClass="card">
+                     <children>
+                        <Pane layoutX="12.0" layoutY="-24.0" prefHeight="42.0" prefWidth="58.0" style="-fx-background-color: #BC4031;" styleClass="card">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="BARCODE" layoutX="8.0" layoutY="30.0" size="28.0" textAlignment="CENTER" wrappingWidth="40.833981707692146" />
+                           </children>
+                        </Pane>
+                        <Text fill="WHITE" layoutX="41.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy Food" wrappingWidth="181.13671875">
+                           <font>
+                              <Font name="Roboto Medium" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

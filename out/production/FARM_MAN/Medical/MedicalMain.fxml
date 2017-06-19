@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="576.0" prefWidth="992.0" stylesheets="@../MainScreen/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Medical.MedicalMainController">
+   <children>
+      <TableView fx:id="animalTable" layoutX="14.0" layoutY="96.0" prefHeight="457.0" prefWidth="472.0">
+        <columns>
+          <TableColumn fx:id="cattleIDColumn" editable="false" prefWidth="94.0" text="Cattle ID" />
+          <TableColumn fx:id="animalIDColumn" editable="false" prefWidth="119.0" sortable="false" text="Animal_ID" />
+            <TableColumn fx:id="weightColumn" editable="false" prefWidth="95.0" sortable="false" text="Weight" />
+            <TableColumn fx:id="tempratureColumn" editable="false" prefWidth="163.0" sortable="false" text="Temperature" />
+        </columns>
+      </TableView>
+      <Pane fx:id="upPane" layoutY="-4.0" prefHeight="100.0" prefWidth="1002.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d67bc" height="73.0" onMouseClicked="#setSick" opacity="0.62" stroke="BLACK" strokeType="INSIDE" width="1002.0" />
+            <Pane layoutX="14.0" layoutY="73.0" onMouseClicked="#reloadMedicalStatus" prefHeight="26.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#26c947" height="26.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Text fill="#f2f0f0" layoutX="40.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Status" textAlignment="CENTER" wrappingWidth="120.13671875">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="788.0" layoutY="73.0" onMouseClicked="#reloadSickAnimals" prefHeight="26.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c91212" height="26.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Text fill="#eee5e5" layoutX="48.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sick Animals" textAlignment="CENTER" wrappingWidth="104.13671875">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="888.0" layoutY="22.0" onMouseClicked="#goHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Home.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="29.0" layoutX="944.0" layoutY="22.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/arrow-back-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Text fill="WHITE" layoutX="64.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Care" wrappingWidth="149.13671875">
+               <font>
+                  <Font name="Roboto Medium" size="20.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="40.0" fitWidth="29.0" layoutX="821.0" layoutY="22.0" onMouseClicked="#setSick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pets.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="animalSickTable" layoutX="524.0" layoutY="96.0" prefHeight="457.0" prefWidth="464.0">
+         <columns>
+            <TableColumn fx:id="sickCattleIDColumn" editable="false" prefWidth="105.0" text="Cattle ID" />
+            <TableColumn fx:id="sickAnimalIDColumn" editable="false" prefWidth="124.0" sortable="false" text="Animal_ID" />
+            <TableColumn fx:id="sickWeightColumn" editable="false" minWidth="0.0" prefWidth="129.0" sortable="false" text="Weight" />
+            <TableColumn fx:id="sickTemperature" editable="false" minWidth="0.0" prefWidth="111.0" sortable="false" text="Temperature" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

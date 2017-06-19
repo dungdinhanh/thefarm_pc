@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="rootPane" prefHeight="576.0" prefWidth="992.0" stylesheets="@../MainScreen/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cattle.CattleController">
+   <children>
+      <TableView fx:id="tableList" editable="true" layoutX="-2.0" layoutY="101.0" prefHeight="426.0" prefWidth="998.0" stylesheets="@../MainScreen/style.css">
+        <columns>
+          <TableColumn fx:id="cattleID" editable="false" prefWidth="118.99996948242188" text="Cattle_ID" />
+          <TableColumn fx:id="animalID" editable="false" prefWidth="147.0" sortable="false" text="Animal_ID" />
+            <TableColumn fx:id="sex" editable="false" prefWidth="156.0" sortable="false" text="Sex" />
+            <TableColumn fx:id="healthIndex" editable="false" prefWidth="171.0" sortable="false" text="Health Index" />
+            <TableColumn fx:id="weight" editable="false" prefWidth="161.0" sortable="false" text="Weight" />
+            <TableColumn fx:id="source" editable="false" prefWidth="125.0" sortable="false" text="Source" />
+            <TableColumn fx:id="dateImport" editable="false" prefWidth="112.0" sortable="false" text="Date_import" />
+        </columns>
+      </TableView>
+      <Pane fx:id="upPane" prefHeight="100.0" prefWidth="992.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d67bc" height="100.0" opacity="0.62" stroke="BLACK" strokeType="INSIDE" width="998.0" />
+      <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="912.0" layoutY="14.0" onMouseClicked="#goHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Home.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="29.0" layoutX="949.0" layoutY="14.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arrow-back-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane fx:id="bottomPane" layoutX="-2.0" layoutY="531.0" prefHeight="67.0" prefWidth="992.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="73.0" layoutX="-2.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="1005.0" />
+            <TextField fx:id="inputSex" layoutX="92.0" layoutY="3.0" prefHeight="25.0" prefWidth="121.0" promptText="male/female" />
+            <TextField fx:id="inputHealthIndex" layoutX="92.0" layoutY="39.0" prefHeight="25.0" prefWidth="121.0" promptText="1-100" />
+            <TextField fx:id="inputWeight" layoutX="323.0" layoutY="3.0" prefHeight="25.0" prefWidth="121.0" promptText="float" />
+            <TextField fx:id="inputSource" layoutX="323.0" layoutY="39.0" prefHeight="25.0" prefWidth="121.0" promptText="USA/VN/Austrailia" />
+            <TextField fx:id="inputDateImport" layoutX="527.0" layoutY="39.0" prefHeight="25.0" prefWidth="121.0" promptText="yyyy-mm-dd" />
+            <Text layoutX="31.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" wrappingWidth="60.99999415874481" />
+            <Text layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Index" wrappingWidth="77.99999415874481" />
+            <Text layoutX="262.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" wrappingWidth="60.99999415874481" />
+            <Text layoutX="262.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source" wrappingWidth="60.99999415874481" />
+            <Text layoutX="456.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date import" wrappingWidth="70.99999415874481" />
+            <ImageView fitHeight="67.0" fitWidth="53.0" layoutX="722.0" layoutY="6.0" onMouseClicked="#addAnimal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/add-icon-76240.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Pane fx:id="deletePane" layoutX="939.0" layoutY="2.0" prefHeight="53.0" prefWidth="53.0">
+               <children>
+                  <ImageView fx:id="deleteImage" fitHeight="53.0" fitWidth="50.0" layoutX="2.0" layoutY="2.0" onMouseClicked="#deleteAnimal" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/delete1600.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="sellPane" layoutX="856.0" layoutY="8.0" onMouseClicked="#sellAnimal" prefHeight="53.0" prefWidth="53.0">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/money_turnover-512.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="popUpPane" layoutX="-240.0" layoutY="138.0" prefHeight="130.0" prefWidth="227.0" styleClass="card">
+         <children>
+            <HBox fx:id="boxPopUpMenusHolder" alignment="TOP_CENTER" layoutX="11.0" layoutY="27.0" prefHeight="74.0" prefWidth="205.0" spacing="15.0">
+               <children>
+                  <VBox fx:id="menuBook" alignment="CENTER" onMouseClicked="#showBookingNode" prefHeight="74.0" prefWidth="53.0" spacing="10.0">
+                     <children>
+                        <FontAwesomeIconView fill="#2e04b9" glyphName="PIED_PIPER_ALT" size="26" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Back Cattle" textAlignment="CENTER" wrappingWidth="38.859375">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+                  <VBox fx:id="menuDetail" alignment="CENTER" onMouseClicked="#deleteAll" prefHeight="74.0" prefWidth="53.0" spacing="10.0">
+                     <children>
+                        <FontAwesomeIconView fill="#0eab30" glyphName="PENCIL_SQUARE" size="26" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Delete all">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+                  <VBox fx:id="menuList" alignment="CENTER" onMouseClicked="#showListsNode" prefHeight="74.0" prefWidth="53.0" spacing="10.0">
+                     <children>
+                        <FontAwesomeIconView fill="#b81906" glyphName="LIST_UL" size="26" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add List">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <MaterialDesignIconView fx:id="iconDialog" fill="WHITE" glyphName="MENU" layoutX="47.0" layoutY="53.0" onMouseClicked="#openDialog" size="28.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MaterialDesignIconView>
+   </children>
+</AnchorPane>

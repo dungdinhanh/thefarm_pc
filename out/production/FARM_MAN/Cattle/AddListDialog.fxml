@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="346.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cattle.AddListDialogController">
+   <children>
+      <TextField fx:id="sourceInput" layoutX="265.0" layoutY="38.0" />
+      <TextField fx:id="minHealthInput" layoutX="265.0" layoutY="86.0" />
+      <TextField fx:id="minWeightInput" layoutX="265.0" layoutY="138.0" />
+      <TextField fx:id="numberInput" layoutX="265.0" layoutY="194.0" />
+      <Text layoutX="112.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source" wrappingWidth="60.1875" />
+      <Text layoutX="112.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min. Health" wrappingWidth="73.025390625" />
+      <Text layoutX="112.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min. Weight" />
+      <Text layoutX="112.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number" wrappingWidth="50.0" />
+      <ComboBox fx:id="genderChoice" layoutX="265.0" layoutY="254.0" prefWidth="150.0" promptText="Gender" />
+      <Button fx:id="done" layoutX="363.0" layoutY="307.0" mnemonicParsing="false" onAction="#doneAction" text="Done" />
+   </children>
+</AnchorPane>
